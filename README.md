@@ -15,3 +15,4 @@ My personal collection of competitive programming code, templates, tools...
 
 - Trees
     - [Segment tree](Trees/segtree.cpp)
+    - [Disjoint set](Trees/dsu.cpp)

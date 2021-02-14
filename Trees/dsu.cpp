@@ -14,9 +14,10 @@ typedef pair<ll, ll> pll;
 #define all(v) v.begin(), v.end()
 #define rall(v) v.rbegin(), v.rend()
 
-// the below implementation of dsu uses a map
-// for a different implementation check the dsu file
+// this file contains 2 different implementations for dsu
 
+// dsu implementation using map (or unordered_map)
+// use for general problems and different data types
 template <typename T>
 struct dsu
 {
@@ -43,26 +44,29 @@ struct dsu
     }
 };
 
-int main()
+// dsu implementation using a vactor
+// use for better performance
+struct dsu
 {
-    fastio;
-    int n, m;
-    cin >> n >> m;
-    dsu<int> ds;
-    vector<pair<int, pii>> edges(m);
-    for (int i = 0; i < m; i++)
+    vector<int> root, size;
+
+    dsu(int n)
     {
-        int a, b, c;
-        cin >> a >> b >> c;
-        edges[i] = {c, {a, b}};
+        size.resize(n + 1, 1);
+        root.resize(n + 1);
+        for (int i = 1; i < n; i++) root[i] = i;
     }
-    sort(edges.begin(), edges.end());
-    ll ans = 0;
-    for (int i = 0; i < m; i++)
+
+    int find(int u) { return root[u] == u ? u : root[u] = find(root[u]); }
+
+    bool join(int u, int v)
     {
-        int c = edges[i].first;
-        int a = edges[i].second.first, b = edges[i].second.second;
-        if (ds.join(a, b)) ans += c;
+        u = find(u);
+        v = find(v);
+        if (u == v) return false;
+        if (size[u] < size[v]) swap(u, v);
+        root[v] = u;
+        size[u] += size[v];
+        return true;
     }
-    cout << ans << "\n";
-}
+};
