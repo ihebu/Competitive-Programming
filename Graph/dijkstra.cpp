@@ -21,21 +21,20 @@ int main()
     fastio;
     int n, m;
     cin >> n >> m;
-    vector<vector<pii>> adj(n);
+    vector<vector<pii>> adj(n + 1);
     for (int i = 0; i < m; i++)
     {
         int a, b, c;
         cin >> a >> b >> c;
-        a--, b--;
         adj[a].push_back({c, b});
         adj[b].push_back({c, a});
     }
 
-    vll dist(n, INF);
+    vll dist(n + 1, INF);
     priority_queue<pll, vector<pll>, greater<pll>> pq;
 
-    dist[0] = 0;
-    pq.push({0, 0});
+    dist[1] = 0;
+    pq.push({0, 1});
 
     while (!pq.empty())
     {
@@ -56,6 +55,6 @@ int main()
         }
     }
 
-    for(int i = 1; i < n; i++) cout << dist[i] << " ";
+    for (int i = 1; i <= n; i++) cout << dist[i] << " ";
     cout << "\n";
 }
