@@ -42,6 +42,7 @@ int main()
             int a = e[j].first;
             int b = e[j].second;
             int c = e[j].weight;
+            if (dist[a] == INF) continue;
             if (dist[a] + c < dist[b])
             {
                 dist[b] = dist[a] + c;
