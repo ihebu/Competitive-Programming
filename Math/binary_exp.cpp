@@ -16,14 +16,12 @@ typedef pair<ll, ll> pll;
 
 const ll MOD = 1000000007;
 
-// fast exponentiation
-ll fast(ll a, ll k)
+ll binexp(ll a, ll k)
 {
     ll ans = 1;
     while (k)
     {
-        if (k & 1)
-            ans = (ans * a) % MOD;
+        if (k & 1) ans = (ans * a) % MOD;
         a = (a * a) % MOD;
         k >>= 1;
     }
@@ -31,8 +29,4 @@ ll fast(ll a, ll k)
 }
 
 // find inverse of a modulo MOD
-ll modinv(ll a)
-{
-    return fast(a, MOD - 2);
-}
-
+inline ll modinv(ll a) { return fast(a, MOD - 2); }
