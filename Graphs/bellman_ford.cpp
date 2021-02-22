@@ -37,6 +37,7 @@ int main()
     for (int i = 0; i < n; i++)
     {
         x = -1;
+        bool stable = true;
         for (int j = 0; j < m; j++)
         {
             int a = e[j].first;
@@ -47,9 +48,11 @@ int main()
             {
                 dist[b] = dist[a] + c;
                 parent[b] = a;
+                stable = false;
                 x = b;
             }
         }
+        if (stable) break;
     }
     if (x == -1) cout << "NO\n";
     else
