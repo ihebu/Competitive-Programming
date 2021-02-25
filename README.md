@@ -18,7 +18,8 @@ My personal collection of competitive programming code, templates, tools...
 - [Prime number sieve](Math/sieve.cpp)
 - [Fermat Primality test](Math/primality_test.cpp)
 
-### Trees
-- [Segment tree](Trees/segtree.cpp)
-- [Disjoint set](Trees/dsu.cpp)
+### Data structures
+- [Segment tree](DS/segtree.cpp)
+- [Disjoint set](DS/dsu.cpp)
+- [Sparse table](DS/sparse_table.cpp)
 
