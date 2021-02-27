@@ -25,4 +25,4 @@ My personal collection of competitive programming code, templates, tools...
 
 ### Strings 
 - [String hashing + Rabin-Karp pattern matching algorithm](Strings/hashing.cpp)
-
+- [Z-function](Strings/z_function.cpp)
