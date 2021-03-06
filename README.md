@@ -15,7 +15,8 @@ My personal collection of competitive programming code, templates, tools...
 ### Maths
 - [Matrix exponontiation](Math/matrix.cpp)
 - [Binary exponentiation and modulo inverse](Math/binary_exp.cpp)
-- [Prime number sieve](Math/sieve.cpp)
+- [Sieve of eratosthenes](Math/sieve.cpp)
+- [Linear Sieve](Math/linear_sieve.cpp)
 - [Fermat Primality test](Math/primality_test.cpp)
 
 ### Data structures
