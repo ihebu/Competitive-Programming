@@ -14,19 +14,16 @@ typedef pair<ll, ll> pll;
 #define all(v) v.begin(), v.end()
 #define rall(v) v.rbegin(), v.rend()
 
-const ll MOD = 1000000007;
-
-ll binexp(ll a, ll k)
+ll modpow(ll a, ll k, ll mod)
 {
     ll ans = 1;
     while (k)
     {
-        if (k & 1) ans = (ans * a) % MOD;
-        a = (a * a) % MOD;
+        if (k & 1) ans = (ans * a) % mod;
+        a = (a * a) % mod;
         k >>= 1;
     }
     return ans;
 }
 
-// find inverse of a modulo MOD
-inline ll modinv(ll a) { return fast(a, MOD - 2); }
+inline ll modinv(ll a, ll mod) { return modpow(a, mod - 2, mod); }
