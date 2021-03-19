@@ -19,6 +19,7 @@ My personal collection of competitive programming code, templates, tools...
 - [Linear Sieve](Math/linear_sieve.cpp)
 - [Fermat Primality test](Math/primality_test.cpp)
 - [GCD, Extended GCD, LCM](Math/gcd.cpp)
+- [Euler's totient function](Math/totient.cpp)
 
 ### Data structures
 - [Segment tree](DS/segtree.cpp)
