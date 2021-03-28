@@ -1,24 +1,7 @@
-#include <bits/stdc++.h>
-
-using namespace std;
-
-typedef long long ll;
-typedef long double ld;
-typedef vector<int> vi;
-typedef vector<ll> vll;
-typedef pair<int, int> pii;
-typedef pair<ll, ll> pll;
-
-#define fastio ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0)
-#define debug(x) cerr << #x << " is " << x << "\n"
-#define all(v) v.begin(), v.end()
-#define rall(v) v.rbegin(), v.rend()
-
 const ll INF = 1e16;
 
 int main()
 {
-    fastio;
     int n, m;
     cin >> n >> m;
     vector<vector<pii>> adj(n + 1);
@@ -27,10 +10,9 @@ int main()
         int a, b, c;
         cin >> a >> b >> c;
         adj[a].push_back({c, b});
-        adj[b].push_back({c, a});
     }
 
-    vll dist(n + 1, INF);
+    vll dist(n + 1, INF), p(n + 1, -1);
     priority_queue<pll, vector<pll>, greater<pll>> pq;
 
     dist[1] = 0;
@@ -38,23 +20,20 @@ int main()
 
     while (!pq.empty())
     {
-        pll p = pq.top();
+        ll a, x;
+        tie(x, a) = pq.top();
         pq.pop();
-        int id = p.second;
-        if (p.first != dist[id]) continue;
-        for (pii e : adj[id])
+        if (x != dist[a]) continue;
+        for (auto e : adj[a])
         {
-            int nxt = e.second;
-            int w = e.first;
-            ll ndist = dist[id] + w;
-            if (ndist < dist[nxt])
+            ll b, c;
+            tie(c, b) = e;
+            if (dist[a] + c < dist[b])
             {
-                dist[nxt] = ndist;
-                pq.push({ndist, nxt});
+                dist[b] = dist[a] + c;
+                p[b] = a;
+                pq.push({dist[b], b});
             }
         }
     }
-
-    for (int i = 1; i <= n; i++) cout << dist[i] << " ";
-    cout << "\n";
 }
