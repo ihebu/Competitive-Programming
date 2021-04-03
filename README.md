@@ -11,6 +11,8 @@ My personal collection of competitive programming code, templates, tools...
 - [Floyd warshall's shortest path algorithm + negative cycle detection](Graphs/floyd_warshall.cpp)
 - [Kruskal's minimum spanning tree algorithm](Graphs/kruskal.cpp)
 
+### Geometry
+- [Basic Geometry](Geometry/basic.cpp)
 
 ### Maths
 - [Binary exponentiation and modulo inverse](Math/binary_exp.cpp)
