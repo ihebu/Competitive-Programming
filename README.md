@@ -13,6 +13,7 @@ My personal collection of competitive programming code, templates, tools...
 
 ### Geometry
 - [Basic Geometry](Geometry/basic.cpp)
+- [Convex Hull](Geometry/convex_hull.cpp)
 
 ### Maths
 - [Binary exponentiation and modulo inverse](Math/binary_exp.cpp)
