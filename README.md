@@ -10,6 +10,7 @@ My personal collection of competitive programming code, templates, tools...
 - [Bellman ford's shortest path algorithm](Graphs/bellman_ford.cpp)
 - [Floyd warshall's shortest path algorithm + negative cycle detection](Graphs/floyd_warshall.cpp)
 - [Kruskal's minimum spanning tree algorithm](Graphs/kruskal.cpp)
+- [Dinic's max flow algorithm](Graphs/dinic.cpp)
 
 ### Geometry
 - [Basic Geometry](Geometry/basic.cpp)
@@ -32,3 +33,26 @@ My personal collection of competitive programming code, templates, tools...
 ### Strings 
 - [String hashing + Rabin-Karp pattern matching algorithm](Strings/hashing.cpp)
 - [Z-function](Strings/z_function.cpp)
+
+
+## Note
+
+using the above code alone won't compile, make sure the add the template above below the code
+
+```cpp
+#include <bits/stdc++.h>
+
+using namespace std;
+
+typedef long long ll;
+typedef long double ld;
+typedef vector<int> vi;
+typedef vector<ll> vll;
+typedef pair<int, int> pii;
+typedef pair<ll, ll> pll;
+
+#define fastio ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0)
+#define debug(x) cerr << #x << " is " << x << "\n"
+#define all(v) v.begin(), v.end()
+#define rall(v) v.rbegin(), v.rend()
+```
