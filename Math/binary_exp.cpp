@@ -10,6 +10,8 @@ ll modpow(ll a, ll k, ll mod)
     return ans;
 }
 
-// this formula works only if mod is a prime number
+// Note 1: this formula works only if mod is a prime number
 // for a general solution, use euler's totient function
+// Note 2: a and mod need to be relatively prime,
+// otherwise the answer does not exist
 inline ll modinv(ll a, ll mod) { return modpow(a, mod - 2, mod); }
