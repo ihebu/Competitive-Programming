@@ -29,6 +29,7 @@ My personal collection of competitive programming code, templates, tools...
 - [Segment tree](DS/segtree.cpp)
 - [Disjoint set](DS/dsu.cpp)
 - [Sparse table](DS/sparse_table.cpp)
+- [Trie](DS/trie.cpp)
 
 #### Strings 
 - [String hashing + Rabin-Karp pattern matching algorithm](Strings/hashing.cpp)
