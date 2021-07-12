@@ -10,13 +10,15 @@ ll modpow(ll a, ll k, ll mod)
     return ans;
 }
 
+mt19937_64 gen(chrono::steady_clock::now().time_since_epoch().count());
+
 bool is_prime(ll p, int iter = 10)
 {
     if (p < 4) return p == 2 || p == 3;
 
     for (int i = 0; i < iter; i++)
     {
-        int a = 2 + rand() % (p - 3);
+        ll a = uniform_int_distribution<int>(2, p - 2)(gen);
         if (modpow(a, p - 1, p) != 1) return false;
     }
     return true;
