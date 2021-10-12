@@ -43,9 +43,8 @@ void dijkstra()
     pq.insert({0, 1});
     while (!pq.empty())
     {
-        auto p = *pq.begin();
+        int a = pq.begin()->second;
         pq.erase(pq.begin());
-        int a = p.second;
         if (vis[a]) continue;
         vis[a] = true;
         for (auto e : adj[a])
